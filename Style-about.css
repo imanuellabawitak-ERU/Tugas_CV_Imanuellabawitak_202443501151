@@ -610,11 +610,15 @@ video {
 }
 
 .loader-logo img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
+    display: block;        /* Menghilangkan ruang kosong bawaan elemen inline. */
+
+    width: 100%;           /* Membuat gambar memenuhi lebar kotak. */
+
+    height: 100%;          /* Membuat gambar memenuhi tinggi kotak. */
+
+    object-fit: cover;     /* Memotong gambar agar memenuhi kotak tanpa distorsi. */
+
+    object-position: center; /* Memusatkan bagian gambar yang terlihat. */
 }
 
 
