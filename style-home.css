@@ -1,0 +1,800 @@
+```css
+/* ==================================================
+   1. GOOGLE FONT
+================================================== */
+
+/* Mengambil font Poppins dari Google Fonts.
+   Weight yang tersedia: 400 sampai 800. */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+
+/* ==================================================
+   2. RESET CSS
+================================================== */
+
+/* Selector universal (*) berlaku untuk seluruh elemen HTML. */
+* {
+    margin: 0;              /* Menghapus margin bawaan browser. */
+    padding: 0;             /* Menghapus padding bawaan browser. */
+    box-sizing: border-box; /* Width dan height sudah termasuk padding serta border. */
+}
+
+/* Mengatur ukuran dasar halaman HTML. */
+html {
+    min-height: 100%;       /* Memastikan HTML minimal setinggi layar. */
+}
+
+/* ==================================================
+   3. BODY / BACKGROUND UTAMA
+================================================== */
+
+body {
+    font-family: 'Poppins', sans-serif; /* Menggunakan font Poppins. */
+
+    min-height: 100vh;      /* Tinggi minimal mengikuti layar perangkat. */
+
+    display: flex;          /* Mengaktifkan sistem Flexbox. */
+    justify-content: center;/* Memposisikan konten secara horizontal di tengah. */
+    align-items: center;    /* Memposisikan konten secara vertikal di tengah. */
+
+    overflow: hidden;       /* Menyembunyikan elemen yang keluar dari layar. */
+
+    background: linear-gradient(
+        135deg,
+        #ffd6e7,
+        #e8d9ff,
+        #d5f3ff
+    );                      /* Membuat background gradasi pink, ungu, dan biru. */
+
+    background-size: 100% 100%; /* Mengatur ukuran gradasi mengikuti area background. */
+
+    animation: gradientMove 8s ease infinite;
+    /* Menjalankan animasi perpindahan posisi background selama 8 detik. */
+
+    padding: 20px;          /* Memberikan jarak 20px dari tepi layar. */
+}
+
+
+/* ==================================================
+   4. HALAMAN UTAMA / CONTAINER
+================================================== */
+
+/* Kotak utama yang berisi logo, judul, teks, dan tombol. */
+.container {
+    width: 100%;            /* Menggunakan seluruh lebar yang tersedia. */
+    max-width: 430px;       /* Membatasi lebar maksimal menjadi 430px. */
+
+    padding: 40px 25px;     /* Jarak dalam: atas-bawah 40px, kiri-kanan 25px. */
+
+    text-align: center;     /* Membuat seluruh teks rata tengah. */
+
+    background: rgba(255, 255, 255, 0.85);
+    /* Background putih dengan transparansi 85%. */
+
+    border: 2px solid white; /* Memberikan garis tepi putih setebal 2px. */
+
+    border-radius: 30px;    /* Membuat sudut kotak membulat. */
+
+    box-shadow: 0 15px 45px rgba(174, 110, 170, 0.2);
+    /* Memberikan bayangan lembut di belakang container. */
+
+    animation: muncul 0.8s ease;
+    /* Membuat container muncul dari bawah dengan perlahan. */
+}
+
+
+/* ==================================================
+   5. LOGO UTAMA
+================================================== */
+
+/* Mengatur gambar logo yang berada di dalam .logo. */
+.logo img {
+    margin-bottom: 10px;   /* Memberikan jarak bawah logo. */
+    width: 200px;          /* Mengatur lebar gambar menjadi 200px. */
+    height: 200px;         /* Mengatur tinggi gambar menjadi 200px. */
+}
+
+
+/* ==================================================
+   6. JUDUL DAN TEKS SAMBUTAN
+================================================== */
+
+/* Mengatur judul Selamat Datang. */
+.judul {
+    font-size: clamp(25px, 6vw, 34px);
+    /* Ukuran font minimal 25px, responsif terhadap layar, maksimal 34px. */
+
+    font-weight: 800;      /* Membuat tulisan sangat tebal. */
+
+    color: #000000;        /* Memberikan warna hitam pada judul. */
+
+    margin-bottom: 12px;   /* Memberikan jarak antara judul dan teks. */
+}
+
+/* Mengatur paragraf sambutan newbie. */
+.tks {
+    color: #78647e;        /* Memberikan warna ungu keabu-abuan. */
+
+    font-size: 14px;       /* Mengatur ukuran tulisan menjadi 14px. */
+
+    line-height: 1.9;      /* Memberikan jarak antarbaris sebesar 1.9 kali font. */
+
+    margin-bottom: 25px;   /* Memberikan jarak bawah sebelum tombol. */
+}
+
+
+/* ==================================================
+   7. PENGATURAN SEMUA BUTTON
+================================================== */
+
+/* Mengatur tampilan dasar seluruh tombol. */
+button {
+    font-family: inherit; /* Mengikuti font dari elemen induknya. */
+
+    font-weight: 700;     /* Membuat tulisan tombol tebal. */
+
+    font-size: 14px;      /* Mengatur ukuran tulisan tombol. */
+
+    border: none;         /* Menghilangkan garis tepi bawaan tombol. */
+
+    border-radius: 15px;  /* Membuat sudut tombol membulat. */
+
+    padding: 13px 24px;   /* Memberikan ruang di dalam tombol. */
+
+    cursor: pointer;      /* Mengubah kursor menjadi tangan saat diarahkan. */
+
+    transition: transform 0.2s, box-shadow 0.2s;
+    /* Membuat perubahan posisi dan bayangan menjadi halus selama 0.2 detik. */
+
+    -webkit-tap-highlight-color: transparent;
+    /* Menghilangkan highlight biru saat tombol disentuh pada perangkat tertentu. */
+}
+
+/* Efek ketika tombol ditekan. */
+button:active {
+    transform: scale(0.95);
+    /* Mengecilkan tombol menjadi 95% saat ditekan. */
+}
+
+
+/* ==================================================
+   8. TOMBOL DAFTAR / MASUK
+================================================== */
+
+/* Tampilan utama tombol Daftar/Masuk. */
+.btn-masuk {
+    color: white; /* Mengubah warna teks menjadi putih. */
+
+    background: linear-gradient(150deg, #000000, #00aaff);
+    /* Membuat gradasi hitam menuju biru. */
+
+    box-shadow: 0 6px 0 #df4d8b;
+    /* Memberikan bayangan pink di bawah tombol. */
+}
+
+/* Efek ketika kursor diarahkan ke tombol masuk. */
+.btn-masuk:hover {
+    transform: translateY(-3px);
+    /* Mengangkat tombol sejauh 3px. */
+
+    box-shadow: 0 9px 0 #df4d8b;
+    /* Memperbesar bayangan ketika tombol terangkat. */
+}
+
+
+/* ==================================================
+   9. FOOTER
+================================================== */
+
+/* Mengatur tulisan Made with carefull and a little chaos. */
+.footer {
+    font-size: 10px;      /* Mengatur ukuran tulisan kecil. */
+
+    color: #b49bb5;       /* Memberikan warna ungu pastel. */
+
+    margin-top: 28px;     /* Memberikan jarak atas dari tombol. */
+}
+
+
+/* ==================================================
+   10. POPUP BACKGROUND
+================================================== */
+
+/* Lapisan gelap yang menutupi halaman ketika popup aktif. */
+.popup {
+    position: fixed;      /* Memposisikan popup relatif terhadap layar. */
+
+    inset: 0;              /* Menempel pada seluruh sisi layar (atas, kanan, bawah, kiri). */
+
+    display: none;         /* Menyembunyikan popup secara default. */
+
+    justify-content: center; /* Memposisikan isi popup secara horizontal. */
+
+    align-items: center;   /* Memposisikan isi popup secara vertikal. */
+
+    padding: 20px;         /* Memberikan jarak dari tepi layar. */
+
+    background: rgba(57, 34, 65, 0.45);
+    /* Memberikan lapisan gelap transparan berwarna ungu. */
+
+    backdrop-filter: blur(7px);
+    /* Memberikan efek blur pada halaman di belakang popup. */
+
+    z-index: 10;           /* Menempatkan popup di atas halaman utama. */
+}
+
+/* Kondisi popup ketika JavaScript menambahkan class aktif. */
+.popup.aktif {
+    display: flex;         /* Menampilkan popup menggunakan Flexbox. */
+
+    animation: fadeIn 0.3s ease;
+    /* Memberikan efek muncul secara perlahan. */
+}
+
+
+/* ==================================================
+   11. KOTAK POPUP
+================================================== */
+
+/* Kotak putih yang berisi pertanyaan dan tombol YA/TIDAK. */
+.popup-box {
+    width: 100%;           /* Menggunakan seluruh lebar yang tersedia. */
+
+    max-width: 370px;      /* Membatasi lebar maksimal popup. */
+
+    padding: 30px 22px;    /* Memberikan ruang di dalam kotak popup. */
+
+    text-align: center;   /* Membuat isi popup rata tengah. */
+
+    background: #fffaff;  /* Memberikan warna putih dengan sedikit nuansa pink. */
+
+    border: 3px solid white; /* Memberikan garis tepi putih. */
+
+    border-radius: 28px;  /* Membuat sudut popup membulat. */
+
+    box-shadow: 0 20px 60px rgba(50, 20, 60, 0.2);
+    /* Memberikan bayangan lembut di sekitar popup. */
+
+    animation: popIn 0.4s cubic-bezier(.17,.67,.35,1.3);
+    /* Membuat popup membesar dengan efek sedikit memantul. */
+}
+
+
+/* ==================================================
+   12. EMOJI POPUP
+================================================== */
+
+/* Mengatur ukuran dan jarak emoji peringatan. */
+.popup-emoji {
+    font-size: 60px;       /* Mengatur ukuran emoji menjadi 60px. */
+
+    margin-bottom: 12px;   /* Memberikan jarak antara emoji dan judul. */
+}
+
+
+/* ==================================================
+   13. JUDUL DAN DESKRIPSI POPUP
+================================================== */
+
+/* Mengatur judul pertanyaan di dalam popup. */
+.popup-box h2 {
+    font-size: 23px;       /* Mengatur ukuran judul. */
+
+    color: #e75495;        /* Memberikan warna pink. */
+
+    margin-bottom: 10px;   /* Memberikan jarak bawah judul. */
+}
+
+/* Mengatur deskripsi atau keterangan popup. */
+.popup-box p {
+    font-size: 12px;       /* Mengatur ukuran tulisan deskripsi. */
+
+    color: #89748d;        /* Memberikan warna ungu keabu-abuan. */
+
+    margin-bottom: 25px;   /* Memberikan jarak sebelum tombol. */
+}
+
+
+/* ==================================================
+   14. AREA TOMBOL YA DAN TIDAK
+================================================== */
+
+/* Mengatur posisi kedua tombol di dalam popup. */
+.button-area {
+    display: flex;         /* Mengaktifkan Flexbox. */
+
+    justify-content: center; /* Menempatkan tombol di tengah horizontal. */
+
+    align-items: center;   /* Menyamakan posisi tombol secara vertikal. */
+
+    gap: 14px;             /* Memberikan jarak 14px antar tombol. */
+
+    min-height: 55px;      /* Menentukan tinggi minimal area tombol. */
+}
+
+
+/* ==================================================
+   15. TOMBOL YA
+================================================== */
+
+/* Tampilan tombol YA. */
+.btn-ya {
+    color: white;          /* Mengubah tulisan menjadi putih. */
+
+    background: #ff65a3;   /* Memberikan warna pink. */
+
+    box-shadow: 0 5px 0 #dc4283;
+    /* Memberikan bayangan pink lebih gelap. */
+}
+
+/* Efek hover pada tombol YA. */
+.btn-ya:hover {
+    transform: translateY(-3px) scale(1.04);
+    /* Mengangkat tombol dan memperbesarnya sedikit. */
+}
+
+
+/* ==================================================
+   16. TOMBOL TIDAK
+================================================== */
+
+/* Tampilan tombol TIDAK. */
+.btn-tidak {
+    color: white;          /* Mengubah warna teks menjadi putih. */
+
+    background: #aaa1b5;   /* Memberikan warna abu-abu keunguan. */
+
+    box-shadow: 0 5px 0 #8b8098;
+    /* Memberikan bayangan di bawah tombol. */
+
+    position: relative;    /* Mengaktifkan pengaturan posisi relatif. */
+
+    z-index: 12;            /* Menempatkan tombol di atas lapisan tertentu. */
+}
+
+
+/* ==================================================
+   17. TOMBOL MAIN LAGI
+================================================== */
+
+/* Tombol ulang disembunyikan sebelum dibutuhkan. */
+.btn-ulang {
+    display: none;         /* Menyembunyikan tombol Main lagi. */
+
+    margin: 12px auto 0;   /* Memberikan jarak atas dan memposisikan di tengah. */
+
+    color: #d94b91;        /* Memberikan warna teks pink tua. */
+
+    background: #ffe2f0;   /* Memberikan background pink pastel. */
+}
+
+/* Tombol ulang ditampilkan ketika class tampil ditambahkan. */
+.btn-ulang.tampil {
+    display: block;        /* Menampilkan tombol sebagai elemen blok. */
+}
+
+
+/* ==================================================
+   18. LOADING SCREEN
+================================================== */
+
+/* Layar loading yang menutupi seluruh halaman. */
+.loader-screen {
+    position: fixed;      /* Membuat loader tetap menempel pada layar. */
+
+    inset: 0;               /* Memenuhi seluruh sisi layar. */
+
+    width: 100%;           /* Menggunakan seluruh lebar layar. */
+
+    height: 100vh;         /* Menggunakan tinggi viewport sebagai fallback. */
+
+    height: 100dvh;        /* Mengikuti tinggi viewport dinamis pada perangkat modern. */
+
+    display: flex;         /* Mengaktifkan Flexbox. */
+
+    align-items: center;   /* Memposisikan konten loader secara vertikal. */
+
+    justify-content: center; /* Memposisikan konten loader secara horizontal. */
+
+    padding: 20px;         /* Memberikan jarak dari tepi layar. */
+
+    overflow: hidden;     /* Menyembunyikan konten yang keluar dari layar. */
+
+    isolation: isolate;   /* Membuat stacking context tersendiri. */
+
+    z-index: 99999;       /* Menempatkan loader di atas seluruh elemen halaman. */
+
+    background-image: url("naga.gif");
+    /* Menggunakan GIF naga sebagai background loading screen. */
+
+    background-size: cover;
+    /* Membuat GIF menutupi seluruh area loader. */
+
+    background-position: center;
+    /* Memposisikan gambar background di tengah. */
+
+    background-repeat: no-repeat;
+    /* Mencegah background diulang. */
+
+    opacity: 1;            /* Membuat loader terlihat sepenuhnya. */
+
+    visibility: visible;   /* Membuat loader dapat ditampilkan. */
+
+    transition: opacity 1.2s ease, visibility 1.2s ease;
+    /* Membuat proses menghilangnya loader menjadi halus. */
+}
+
+/* Kondisi loader ketika loading sudah selesai. */
+.loader-screen.loader-hidden {
+    opacity: 0;            /* Membuat loader transparan sepenuhnya. */
+
+    visibility: hidden;    /* Menyembunyikan loader dari tampilan. */
+
+    pointer-events: none;  /* Mencegah loader menghalangi klik pengguna. */
+}
+
+
+/* ==================================================
+   19. KONTEN LOADER
+================================================== */
+
+/* Mengatur seluruh isi loading screen. */
+.loader-content {
+    position: relative;    /* Menjadi acuan posisi elemen di dalamnya. */
+
+    z-index: 1;             /* Memastikan konten berada di atas background. */
+
+    width: 100%;           /* Menggunakan seluruh lebar yang tersedia. */
+
+    max-width: 320px;      /* Membatasi lebar konten loader. */
+
+    margin: auto;          /* Memposisikan konten secara otomatis di tengah. */
+
+    display: flex;         /* Mengaktifkan Flexbox. */
+
+    flex-direction: column; /* Menyusun seluruh isi secara vertikal. */
+
+    align-items: center;   /* Menempatkan seluruh isi di tengah horizontal. */
+
+    text-align: center;   /* Membuat teks rata tengah. */
+
+    animation: loaderDrop 1.5s ease both;
+    /* Membuat seluruh konten loader turun perlahan saat muncul. */
+}
+
+
+/* ==================================================
+   20. LOGO LOADER
+================================================== */
+
+/* Kotak pembungkus gambar logo pada loading screen. */
+.loader-logo {
+    width: 100px;          /* Mengatur lebar kotak logo. */
+
+    height: 100px;         /* Mengatur tinggi kotak logo. */
+
+    flex-shrink: 0;        /* Mencegah logo mengecil ketika ruang terbatas. */
+
+    margin: 0 auto 22px;   /* Memposisikan logo di tengah dan memberikan jarak bawah. */
+
+    overflow: hidden;     /* Memotong bagian gambar yang keluar dari kotak. */
+
+    border: 3px solid #ffffff;
+    /* Memberikan garis tepi putih. */
+
+    border-radius: 24px;  /* Membuat sudut kotak logo membulat. */
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    /* Memberikan bayangan gelap di sekitar logo. */
+}
+
+/* Mengatur gambar di dalam kotak logo loader. */
+.loader-logo img {
+    display: block;        /* Menghilangkan ruang kosong bawaan elemen inline. */
+
+    width: 100%;           /* Membuat gambar memenuhi lebar kotak. */
+
+    height: 100%;          /* Membuat gambar memenuhi tinggi kotak. */
+
+    object-fit: cover;     /* Memotong gambar agar memenuhi kotak tanpa distorsi. */
+
+    object-position: center; /* Memusatkan bagian gambar yang terlihat. */
+}
+
+
+/* ==================================================
+   21. NAMA WITAK
+================================================== */
+
+/* Mengatur tulisan WITAK pada loading screen. */
+.loader-name {
+    margin: 0 0 8px;       /* Menghilangkan margin atas dan memberikan jarak bawah. */
+
+    color: #ffffff;        /* Mengubah warna tulisan menjadi putih. */
+
+    font-size: clamp(28px, 6vw, 38px);
+    /* Ukuran font responsif dengan minimal 28px dan maksimal 38px. */
+
+    font-weight: 800;      /* Membuat tulisan sangat tebal. */
+
+    letter-spacing: 4px;  /* Memberikan jarak antarhuruf. */
+
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+    /* Memberikan bayangan agar tulisan terbaca di atas GIF. */
+}
+
+
+/* ==================================================
+   22. SUBTITLE LOADER
+================================================== */
+
+/* Mengatur tulisan WELCOME TO THE SALTY SPITTON. */
+.loader-subtitle {
+    padding: 0;            /* Menghilangkan padding bawaan. */
+
+    margin: 0 0 28px;      /* Memberikan jarak bawah sebelum progress bar. */
+
+    background: transparent; /* Membuat background transparan. */
+
+    box-shadow: none;      /* Menghilangkan bayangan. */
+
+    border-radius: 0;      /* Menghilangkan sudut membulat. */
+
+    color: #ffffff;        /* Mengubah warna tulisan menjadi putih. */
+
+    font-size: 12px;       /* Mengatur ukuran tulisan. */
+
+    font-weight: 600;      /* Membuat tulisan sedikit tebal. */
+
+    letter-spacing: 2px;   /* Memberikan jarak antarhuruf. */
+
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+    /* Memberikan bayangan agar teks lebih mudah dibaca. */
+}
+
+
+/* ==================================================
+   23. PROGRESS BAR LOADER
+================================================== */
+
+/* Jalur atau tempat progress bar bergerak. */
+.loader-track {
+    width: 100%;           /* Menggunakan seluruh lebar konten loader. */
+
+    height: 6px;           /* Mengatur ketebalan jalur progress bar. */
+
+    overflow: hidden;     /* Menyembunyikan bagian progress yang keluar jalur. */
+
+    border-radius: 20px;  /* Membuat ujung jalur membulat. */
+
+    background: rgba(255, 255, 255, 0.4);
+    /* Memberikan warna putih transparan pada jalur. */
+}
+
+/* Bagian progress yang bergerak di dalam jalur. */
+.loader-progress {
+    width: 40%;            /* Mengatur lebar progress menjadi 40% dari jalur. */
+
+    height: 100%;          /* Menggunakan seluruh tinggi jalur. */
+
+    border-radius: 20px;  /* Membuat ujung progress membulat. */
+
+    background: linear-gradient(90deg, #60a5fa, #ffffff);
+    /* Memberikan gradasi biru muda menuju putih. */
+
+    animation: loadingProgress 1.5s ease-in-out infinite;
+    /* Membuat progress bergerak terus-menerus. */
+}
+
+
+/* ==================================================
+   24. TEKS LOADING
+================================================== */
+
+/* Mengatur tulisan Preparing your Luckness... */
+.loader-text {
+    display: block;        /* Membuat teks menjadi elemen blok. */
+
+    margin-top: 14px;      /* Memberikan jarak dari progress bar. */
+
+    color: #ffffff;        /* Mengubah warna teks menjadi putih. */
+
+    font-size: 12px;       /* Mengatur ukuran tulisan. */
+
+    letter-spacing: 0.5px; /* Memberikan sedikit jarak antarhuruf. */
+
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+    /* Memberikan bayangan agar tulisan mudah dibaca. */
+}
+
+
+/* ==================================================
+   25. ANIMASI CONTAINER / MUNCUL
+================================================== */
+
+/* Animasi halaman utama muncul dari bawah. */
+@keyframes muncul {
+
+    from {
+        opacity: 0;                 /* Memulai dengan transparan. */
+
+        transform: translateY(25px); /* Memulai 25px di bawah posisi akhir. */
+    }
+
+    to {
+        opacity: 1;                 /* Menjadi terlihat sepenuhnya. */
+
+        transform: translateY(0);  /* Kembali ke posisi normal. */
+    }
+}
+
+
+/* ==================================================
+   26. ANIMASI POPUP / POP IN
+================================================== */
+
+/* Animasi popup muncul dengan efek membesar. */
+@keyframes popIn {
+
+    from {
+        opacity: 0;          /* Memulai dalam keadaan transparan. */
+
+        transform: scale(0.7); /* Memulai dengan ukuran 70%. */
+    }
+
+    to {
+        opacity: 1;          /* Menjadi terlihat sepenuhnya. */
+
+        transform: scale(1); /* Kembali ke ukuran normal 100%. */
+    }
+}
+
+
+/* ==================================================
+   27. ANIMASI FADE IN
+================================================== */
+
+/* Animasi membuat elemen muncul secara perlahan. */
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;          /* Memulai dengan transparansi penuh. */
+    }
+
+    to {
+        opacity: 1;          /* Menjadi terlihat sepenuhnya. */
+    }
+}
+
+
+/* ==================================================
+   28. ANIMASI GOYANG
+================================================== */
+
+/* Animasi elemen berputar ke kiri dan kanan. */
+@keyframes goyang {
+
+    0%, 100% {
+        transform: rotate(-8deg); /* Memiringkan elemen 8 derajat ke kiri. */
+    }
+
+    50% {
+        transform: rotate(8deg);  /* Memiringkan elemen 8 derajat ke kanan. */
+    }
+}
+
+
+/* ==================================================
+   29. ANIMASI GRADIENT BACKGROUND
+================================================== */
+
+/* Animasi perpindahan posisi gradasi background. */
+@keyframes gradientMove {
+
+    0%, 100% {
+        background-position: 0% 50%; /* Posisi gradasi di sisi awal. */
+    }
+
+    50% {
+        background-position: 100% 50%; /* Memindahkan gradasi ke sisi sebaliknya. */
+    }
+}
+
+
+/* ==================================================
+   30. ANIMASI LOADER DROP
+================================================== */
+
+/* Membuat isi loading screen muncul dari atas. */
+@keyframes loaderDrop {
+
+    from {
+        opacity: 0;                 /* Memulai dalam keadaan transparan. */
+
+        transform: translateY(-25px); /* Memulai 25px di atas posisi akhir. */
+    }
+
+    to {
+        opacity: 1;                 /* Menjadi terlihat sepenuhnya. */
+
+        transform: translateY(0);  /* Kembali ke posisi normal. */
+    }
+}
+
+
+/* ==================================================
+   31. ANIMASI LOADING PROGRESS
+================================================== */
+
+/* Membuat progress bar bergerak dari kiri ke kanan. */
+@keyframes loadingProgress {
+
+    0% {
+        transform: translateX(-110%);
+        /* Memulai di luar jalur sebelah kiri. */
+    }
+
+    100% {
+        transform: translateX(260%);
+        /* Bergerak hingga keluar dari jalur sebelah kanan. */
+    }
+}
+
+
+/* ==================================================
+   32. RESPONSIVE DESIGN
+================================================== */
+
+/* Aturan khusus untuk perangkat dengan lebar layar maksimal 400px. */
+@media (max-width: 400px) {
+
+    .container {
+        padding: 32px 18px;
+        /* Mengurangi padding container agar lebih nyaman di layar kecil. */
+    }
+
+    .popup-box h2 {
+        font-size: 21px;
+        /* Mengecilkan judul popup agar tidak terlalu besar. */
+    }
+}
+
+
+/* ==================================================
+   33. ACCESSIBILITY / REDUCED MOTION
+================================================== */
+
+/* Mengurangi animasi untuk pengguna yang memilih pengurangan gerakan
+   melalui pengaturan perangkat mereka. */
+@media (prefers-reduced-motion: reduce) {
+
+    body {
+        animation: none;
+        /* Menghentikan animasi background gradient. */
+    }
+
+    .container,
+    .popup-box,
+    .popup.aktif,
+    .loader-content,
+    .loader-progress {
+        animation: none;
+        /* Menghentikan animasi pada elemen-elemen tersebut. */
+    }
+
+    .loader-progress {
+        width: 100%;
+        /* Membuat progress langsung memenuhi jalur ketika animasi mati. */
+    }
+
+    .loader-screen {
+        transition: none;
+        /* Menghilangkan transisi loader. */
+    }
+
+    button {
+        transition: none;
+        /* Menghilangkan transisi tombol. */
+    }
+}
+```

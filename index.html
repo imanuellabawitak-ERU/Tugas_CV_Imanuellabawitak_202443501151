@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<!--
+    Deklarasi HTML5.
+    Memberitahu browser bahwa dokumen ini menggunakan HTML versi 5.
+-->
+
+<html lang="id">
+<!--
+    Tag pembuka HTML.
+    lang="id" menandakan bahwa bahasa utama halaman adalah Bahasa Indonesia.
+-->
+
+<head>
+    <!-- ==========================================
+         1. INFORMASI HALAMAN
+    =========================================== -->
+
+    <meta charset="UTF-8">
+    <!-- Mengatur encoding karakter menjadi UTF-8.
+         Mendukung simbol, emoji, dan berbagai karakter bahasa. -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Membuat tampilan website menyesuaikan ukuran layar perangkat.
+         width=device-width = lebar halaman mengikuti lebar perangkat.
+         initial-scale=1.0 = zoom awal berada pada skala normal. -->
+
+    <title>Welcome Newbie 💖</title>
+    <!-- Judul halaman yang muncul pada tab browser. -->
+
+
+    <!-- ==========================================
+         2. MENGHUBUNGKAN FILE CSS
+    =========================================== -->
+
+    <link rel="stylesheet" href="style-home.css">
+    <!--
+        Menghubungkan dokumen HTML dengan file CSS eksternal.
+
+        rel="stylesheet" = memberitahu browser bahwa file ini adalah stylesheet.
+        href="style-home.css" = lokasi file CSS yang digunakan.
+
+        Pastikan nama file dan lokasinya sesuai.
+    -->
+
+</head>
+
+
+<body>
+<!--
+    Tag body berisi seluruh konten yang akan terlihat
+    oleh pengunjung website.
+-->
+
+
+    <!-- ==========================================
+         3. LOADING SCREEN
+    =========================================== -->
+
+    <div id="loader" class="loader-screen">
+    <!--
+        Pembungkus utama loading screen.
+
+        id="loader" = identitas unik yang dapat dipanggil JavaScript.
+        class="loader-screen" = menghubungkan elemen dengan CSS loader.
+
+        Elemen ini menutupi halaman ketika website sedang dimuat.
+    -->
+
+        <div class="loader-content">
+        <!-- Pembungkus seluruh isi loading screen.
+             Mengatur posisi logo, nama, subtitle, dan progress bar. -->
+
+
+            <!-- LOGO LOADER -->
+
+            <div class="loader-logo">
+            <!-- Kotak pembungkus logo pada loading screen.
+                 Class ini digunakan untuk mengatur ukuran,
+                 border, sudut, dan bayangan logo. -->
+
+                <img
+                    src="file logo.PNG"
+                    alt="Logo WITAK"
+                >
+                <!--
+                    Menampilkan gambar logo.
+
+                    src = lokasi atau nama file gambar.
+                    alt = teks alternatif jika gambar gagal dimuat.
+
+                    Pastikan file logo.PNG berada di lokasi yang benar.
+                -->
+
+            </div>
+
+
+            <!-- NAMA WEBSITE -->
+
+            <h1 class="loader-name">
+                WITAK
+            </h1>
+            <!--
+                Judul utama pada loading screen.
+
+                h1 = heading atau judul tingkat pertama.
+                class="loader-name" = menghubungkan tulisan
+                dengan pengaturan CSS loader-name.
+            -->
+
+
+            <!-- SUBTITLE LOADER -->
+
+            <p class="loader-subtitle">
+                WELCOME TO THE SALTY SPITTON
+            </p>
+            <!--
+                Menampilkan tulisan tambahan di bawah nama WITAK.
+
+                p = paragraf.
+                class="loader-subtitle" = mengatur tampilan subtitle.
+            -->
+
+
+            <!-- PROGRESS BAR -->
+
+            <div class="loader-track">
+            <!--
+                Jalur atau wadah progress bar.
+                Berfungsi sebagai tempat animasi loading berjalan.
+            -->
+
+                <div class="loader-progress"></div>
+                <!--
+                    Bagian progress yang bergerak.
+
+                    Class loader-progress diatur oleh CSS
+                    untuk menghasilkan animasi loading.
+                -->
+
+            </div>
+
+
+            <!-- TEKS STATUS LOADING -->
+
+            <span class="loader-text">
+                Preparing your Luckness...
+            </span>
+            <!--
+                Menampilkan teks status loading.
+
+                span = elemen teks inline.
+                class="loader-text" = menghubungkan teks
+                dengan pengaturan CSS loader-text.
+            -->
+
+        </div>
+    </div>
+
+
+    <!-- ==========================================
+         4. HALAMAN UTAMA / WELCOME PAGE
+    =========================================== -->
+
+    <div class="container">
+    <!--
+        Pembungkus seluruh konten halaman utama.
+
+        class="container" = menghubungkan elemen dengan CSS container.
+        Digunakan untuk mengatur ukuran, posisi, background,
+        padding, border, dan bayangan halaman utama.
+    -->
+
+
+        <!-- LOGO UTAMA -->
+
+        <div class="logo">
+        <!-- Pembungkus gambar logo pada halaman utama. -->
+
+            <img
+                src="file logo.PNG"
+                alt="Logo WITAK"
+            >
+            <!--
+                Menampilkan gambar logo utama.
+
+                src = sumber atau lokasi gambar.
+                alt = teks alternatif gambar.
+            -->
+
+        </div>
+
+
+        <!-- JUDUL SAMBUTAN -->
+
+        <h1 class="judul">
+            Selamat Datang!
+        </h1>
+        <!--
+            Judul utama halaman welcome.
+
+            h1 = heading tingkat pertama.
+            class="judul" = mengatur ukuran, ketebalan,
+            warna, dan jarak judul melalui CSS.
+        -->
+
+
+        <!-- TEKS SAMBUTAN -->
+
+        <p class="tks">
+            Hai newbie! 🤔<br>
+            Silakan klik kalau kamu berani~
+        </p>
+        <!--
+            Paragraf sambutan untuk pengunjung website.
+
+            p = membuat paragraf.
+            class="tks" = mengatur warna, ukuran, dan jarak teks.
+            br = membuat baris baru tanpa membuat paragraf baru.
+        -->
+
+
+        <!-- TOMBOL DAFTAR / MASUK -->
+
+        <button
+            type="button"
+            id="button"
+            class="btn-masuk"
+        >
+            Daftar/Masuk
+        </button>
+        <!--
+            Tombol utama untuk memulai interaksi.
+
+            button = membuat tombol yang dapat diklik.
+            type="button" = mencegah tombol bertindak sebagai submit form.
+            id="button" = identitas tombol untuk JavaScript.
+            class="btn-masuk" = mengatur desain tombol melalui CSS.
+
+            JavaScript dapat menggunakan ID ini
+            untuk mendeteksi ketika tombol diklik.
+        -->
+
+
+        <!-- FOOTER -->
+
+        <p class="footer">
+            Made with carefull and a little chaos
+        </p>
+        <!--
+            Tulisan bagian bawah halaman utama.
+
+            p = paragraf.
+            class="footer" = mengatur ukuran, warna, dan jarak footer.
+        -->
+
+    </div>
+
+
+    <!-- ==========================================
+         5. POPUP PERTANYAAN
+    =========================================== -->
+
+    <div class="popup" id="popup">
+    <!--
+        Pembungkus utama popup.
+
+        class="popup" = menghubungkan popup dengan CSS.
+        id="popup" = identitas unik untuk dikontrol JavaScript.
+
+        Popup awalnya disembunyikan melalui CSS.
+        JavaScript dapat menambahkan class "aktif"
+        untuk menampilkan popup.
+    -->
+
+
+        <div class="popup-box" id="popupBox">
+        <!--
+            Kotak utama popup yang berisi emoji,
+            pertanyaan, deskripsi, dan tombol.
+
+            class="popup-box" = mengatur tampilan kotak popup.
+            id="popupBox" = memungkinkan JavaScript
+            mengakses kotak popup secara langsung.
+        -->
+
+
+            <!-- EMOJI POPUP -->
+
+            <div class="popup-emoji" id="popupEmoji">
+                ⚠
+            </div>
+            <!--
+                Menampilkan emoji atau simbol peringatan.
+
+                class="popup-emoji" = mengatur ukuran dan jarak emoji.
+                id="popupEmoji" = memungkinkan JavaScript
+                mengganti emoji sesuai kondisi pertanyaan.
+            -->
+
+
+            <!-- JUDUL PERTANYAAN -->
+
+            <h2 id="pertanyaan">
+                IYA ATAU TIDAK
+            </h2>
+            <!--
+                Menampilkan judul atau pertanyaan popup.
+
+                h2 = heading tingkat kedua.
+                id="pertanyaan" = digunakan JavaScript
+                untuk mengubah isi pertanyaan secara dinamis.
+            -->
+
+
+            <!-- DESKRIPSI PERTANYAAN -->
+
+            <p id="deskripsi">
+                🤨
+            </p>
+            <!--
+                Menampilkan keterangan atau deskripsi pertanyaan.
+
+                p = paragraf.
+                id="deskripsi" = memungkinkan JavaScript
+                mengubah teks deskripsi popup.
+            -->
+
+
+            <!-- AREA TOMBOL YA DAN TIDAK -->
+
+            <div class="button-area" id="buttonArea">
+            <!--
+                Pembungkus kedua tombol jawaban.
+
+                class="button-area" = mengatur posisi,
+                jarak, dan susunan tombol melalui Flexbox.
+
+                id="buttonArea" = memungkinkan JavaScript
+                mengakses area tombol.
+            -->
+
+
+                <!-- TOMBOL YA -->
+
+                <button
+                    type="button"
+                    id="ya"
+                    class="btn-ya"
+                >
+                    YA 😡
+                </button>
+                <!--
+                    Tombol untuk memilih jawaban YA.
+
+                    type="button" = tombol biasa.
+                    id="ya" = identitas untuk event JavaScript.
+                    class="btn-ya" = mengatur desain tombol YA.
+                -->
+
+
+                <!-- TOMBOL TIDAK -->
+
+                <button
+                    type="button"
+                    id="tidak"
+                    class="btn-tidak"
+                >
+                    TIDAK 🙄
+                </button>
+                <!--
+                    Tombol untuk memilih jawaban TIDAK.
+
+                    type="button" = tombol biasa.
+                    id="tidak" = identitas untuk event JavaScript.
+                    class="btn-tidak" = mengatur desain tombol TIDAK.
+
+                    JavaScript dapat menggunakan tombol ini
+                    untuk memberikan interaksi khusus.
+                -->
+
+            </div>
+
+
+            <!-- TOMBOL MAIN LAGI -->
+
+            <button
+                type="button"
+                id="ulang"
+                class="btn-ulang"
+            >
+                Main lagi 🔄
+            </button>
+            <!--
+                Tombol untuk mengulang permainan atau interaksi.
+
+                type="button" = tombol biasa.
+                id="ulang" = identitas untuk JavaScript.
+                class="btn-ulang" = mengatur desain tombol.
+
+                Class "tampil" dapat ditambahkan melalui JavaScript
+                untuk menampilkan tombol ini.
+            -->
+
+        </div>
+    </div>
+
+
+    <!-- ==========================================
+         6. MENGHUBUNGKAN JAVASCRIPT
+    =========================================== -->
+
+    <script src="Script.js"></script>
+    <!--
+        Menghubungkan file JavaScript eksternal.
+
+        src="Script.js" = lokasi file JavaScript.
+
+        JavaScript bertugas mengatur:
+        - Tombol Daftar/Masuk.
+        - Muncul dan hilangnya popup.
+        - Perubahan emoji dan pertanyaan.
+        - Interaksi tombol YA dan TIDAK.
+        - Tombol Main lagi.
+        - Loading screen.
+
+        Script diletakkan di akhir body agar elemen HTML
+        sudah tersedia sebelum JavaScript dijalankan.
+
+        Pastikan nama file sesuai dengan file sebenarnya.
+    -->
+
+</body>
+<!-- Penutup seluruh konten halaman website. -->
+
+</html>
+<!-- Penutup dokumen HTML. -->
+```
